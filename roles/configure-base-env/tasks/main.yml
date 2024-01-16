@@ -23,10 +23,15 @@
   copy:
     src: "{{ role_path }}/files/nvim"
     dest: "{{ ansible_env.HOME }}/.config/"
+- name: "Copy ranger Config"
+  copy:
+    src: "{{ role_path }}/files/ranger"
+    dest: "{{ ansible_env.HOME }}/.config/"
 
 - name: "Install packages for env - Rust、Go"
   pacman:
     name:
+      - ranger
       - rust
       - go
     state: latest
