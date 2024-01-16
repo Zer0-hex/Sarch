@@ -1,3 +1,0 @@
-[submodule "roles/configure-desktop/files/swaylock"]
-	path = roles/configure-desktop/files/swaylock
-	url = https://github.com/dracula/swaylock.git
