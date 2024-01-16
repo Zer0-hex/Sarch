@@ -31,7 +31,9 @@
 - name: "Install packages for env - Rust、Go"
   pacman:
     name:
+      - neovim
       - ranger
+      - tmux
       - rust
       - go
     state: latest
