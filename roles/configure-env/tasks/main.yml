@@ -4,4 +4,6 @@
     name:
       - rust
       - go
-
+    state: latest
+  become: true
+  become_method: sudo
