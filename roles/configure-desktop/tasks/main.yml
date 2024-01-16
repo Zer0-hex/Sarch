@@ -16,6 +16,10 @@
   copy:
     src: "{{ role_path }}/files/sway"
     dest: "{{ ansible_env.HOME }}/.config/"
+- name: "Copy swaylock Config"
+  copy:
+    src: "{{ role_path }}/files/swaylock/swaylock"
+    dest: "{{ ansible_env.HOME }}/.config/"
 - name: "Copy foot Config"
   copy:
     src: "{{ role_path }}/files/foot"
