@@ -1,0 +1,7 @@
+---
+- name: "Install packages for env"
+  pacman:
+    name:
+      - rust
+      - go
+

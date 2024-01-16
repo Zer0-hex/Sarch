@@ -1,0 +1,29 @@
+---
+- name: "Install packages for Desktop"
+  pacman:
+    name:
+      - sway
+      - swaybg
+      - polkit
+      - foot
+      - wofi
+      - waybar
+    state: latest
+  become: true
+  become_method: sudo
+- name: "Copy Sway Config file"
+  copy:
+    src: "{{ role_path }}/files/sway"
+    dest: "{{ ansible_env.HOME }}/.config/"
+- name: "Copy foot Config"
+  copy:
+    src: "{{ role_path }}/files/foot"
+    dest: "{{ ansible_env.HOME }}/.config/"
+- name: "Copy wofi Config"
+  copy:
+    src: "{{ role_path }}/files/wofi"
+    dest: "{{ ansible_env.HOME }}/.config/"
+- name: "Copy waybar Config"
+  copy:
+    src: "{{ role_path }}/files/waybar"
+    dest: "{{ ansible_env.HOME }}/.config/"
