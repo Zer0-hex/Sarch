@@ -1,7 +1,7 @@
 ---
 - name: "Copy bashrc"
   copy:
-    src: "{{ role_path }}/files/bashrc"
+    src: "{{ role_path }}/files/bash/bashrc"
     dest: "{{ ansible_env.HOME }}/.bashrc"
 
 - name: "Install packages for env - Rust、Go"

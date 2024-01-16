@@ -18,7 +18,7 @@
     dest: "{{ ansible_env.HOME }}/.config/"
 - name: "Copy swaylock Config"
   copy:
-    src: "{{ role_path }}/files/swaylock/swaylock"
+    src: "{{ role_path }}/files/swaylock"
     dest: "{{ ansible_env.HOME }}/.config/"
 - name: "Copy foot Config"
   copy:
