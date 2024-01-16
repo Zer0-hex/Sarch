@@ -28,7 +28,7 @@
     src: "{{ role_path }}/files/ranger"
     dest: "{{ ansible_env.HOME }}/.config/"
 
-- name: "Install packages for env - Rust、Go"
+- name: "Install base packages ... env ..."
   pacman:
     name:
       - neovim
@@ -36,6 +36,34 @@
       - tmux
       - rust
       - go
+    state: latest
+  become: true
+  become_method: sudo
+
+- name: "Install packages for fonts"
+  pacman:
+    name:
+      - adobe-source-code-pro-fonts
+      - ttf-font-awesome
+      - ttf-roboto-mono
+      - adobe-source-sans-fonts
+      - adobe-source-han-sans-cn-fonts
+      - adobe-source-han-sans-tw-fonts
+      - adobe-source-han-sans-hk-fonts
+      - adobe-source-han-sans-otc-fonts
+      - adobe-source-serif-fonts
+      - adobe-source-han-serif-cn-fonts
+      - adobe-source-han-serif-tw-fonts
+      - adobe-source-han-serif-hk-fonts
+      - adobe-source-han-serif-otc-fonts
+      - noto-fonts
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - noto-fonts-extra
+      - wqy-bitmapfont
+      - wqy-microhei
+      - wqy-microhei-lite
+      - wqy-zenhei
     state: latest
   become: true
   become_method: sudo

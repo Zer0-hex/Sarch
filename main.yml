@@ -9,3 +9,4 @@
   roles:
     - role: "roles/configure-base-env"
     - role: "roles/configure-desktop"
+    - role: "roles/install-tools"
