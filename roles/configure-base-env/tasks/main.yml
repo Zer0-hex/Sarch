@@ -1,0 +1,34 @@
+---
+- name: "Add NOPASSWD rule for the current user"
+  become: true
+  lineinfile:
+    dest: /etc/sudoers
+    insertbefore: EOF
+    regexp: "{{ ansible_user_id }} ALL="
+    line: "{{ item }}"
+    validate: visudo -cf %s
+  when: ansible_user_id != 'root'
+  with_items:
+    - "{{ ansible_user_id }}\tALL=(ALL) NOPASSWD:ALL"
+
+- name: "Copy bashrc"
+  copy:
+    src: "{{ role_path }}/files/bash/bashrc"
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+- name: "Copy tmux.conf"
+  copy:
+    src: "{{ role_path }}/files/tmux/tmux.conf"
+    dest: "{{ ansible_env.HOME }}/.tmux.conf"
+- name: "Copy Neovim"
+  copy:
+    src: "{{ role_path }}/files/nvim"
+    dest: "{{ ansible_env.HOME }}/.config/"
+
+- name: "Install packages for env - Rust、Go"
+  pacman:
+    name:
+      - rust
+      - go
+    state: latest
+  become: true
+  become_method: sudo
