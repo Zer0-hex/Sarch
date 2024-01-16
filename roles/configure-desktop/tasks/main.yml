@@ -4,6 +4,7 @@
     name:
       - sway
       - swaybg
+      - swaylock
       - polkit
       - foot
       - wofi
