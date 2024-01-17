@@ -1,2 +1,3 @@
 ---
-- include: kerbrute.yml
+- name: "Install kerbrute task"
+  include: kerbrute.yml
