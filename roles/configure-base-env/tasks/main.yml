@@ -71,4 +71,4 @@
 
 - name: "Link VSCode-oss Profile to VSCode"
   shell: |
-    ln -s ~/.vscode-oss ~/.vscode
+    if [ -e ~/.vscode ]; then echo Dir already exists...; else ln -s ~/.vscode-oss ~/.vscode; fi
