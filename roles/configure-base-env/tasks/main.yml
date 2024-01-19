@@ -11,23 +11,6 @@
   with_items:
     - "{{ ansible_user_id }}\tALL=(ALL) NOPASSWD:ALL"
 
-- name: "Add Archlinuxcn Mirrors"
-  become: true
-  lineinfile:
-    dest: /etc/pacman.conf
-    insertbefore: EOF
-    regexp: "archlinuxcn"
-  with_items:
-    - "[archlinuxcn]\nServer = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch"
-
-- name: "Install Archlinuxcn-kerying"
-  pacman:
-    name:
-      - archlinuxcn-keyring
-    state: latest
-  become: true
-  become_method: sudo
-
 - name: "Copy bashrc"
   copy:
     src: "{{ role_path }}/files/bash/bashrc"
