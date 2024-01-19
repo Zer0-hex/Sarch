@@ -68,3 +68,7 @@
     state: latest
   become: true
   become_method: sudo
+
+  - name: "Link VSCode-oss Profile to VSCode"
+  shell: |
+    ln -s ~/.vscode-oss ~/.vscode

@@ -20,4 +20,10 @@
             - rust-lang.rust-analyzer
             - golang.Go
             - dracula-theme.theme-dracula
+            - MS-CEINTL.vscode-language-pack-zh-hans
+          visual_studio_code_settings_overwrite: true
+          visual_studio_code_settings: {
+            "workbench.colorTheme": "Dracula",
+            "editor.fontSize": 24,
+          }
     - role: "roles/install-tools"
