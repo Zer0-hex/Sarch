@@ -25,5 +25,6 @@
           visual_studio_code_settings: {
             "workbench.colorTheme": "Dracula",
             "editor.fontSize": 24,
+            "window.menuBarVisibility": "toggle"
           }
     - role: "roles/install-tools"
